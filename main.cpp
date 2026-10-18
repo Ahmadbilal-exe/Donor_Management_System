@@ -1,10 +1,14 @@
 #include<iostream>
 #include <fstream>
-#include <windows.h>
 #include <ctime>
 #include <string>
 #include <cstdlib>
 #include <limits>
+#ifdef _WIN32
+    #include <windows.h>
+#else
+    #include <unistd.h>
+#endif
      /////ahmad ///////1234        username and password
 void setColor(int color) {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
